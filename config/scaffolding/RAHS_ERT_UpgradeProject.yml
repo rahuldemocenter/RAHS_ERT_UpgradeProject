@@ -23,6 +23,20 @@ services:
   packages:
   - name: WmPublic
     version: 11.0.0.0.741
+- serviceName: project.rahs_ert_upgrade.integrations:EFS_PackageService
+  packages:
+  - name: RAHS_ERT_UpgradeProject
+    version: "1.0"
+  - name: TestWIE1344
+    version: "1.0"
+- serviceName: TestWIE1344.services:addInt
+  packages:
+  - name: TestWIE1344
+    version: "1.0"
+- serviceName: pub.math:addInts
+  packages:
+  - name: WmPublic
+    version: 11.0.0.0.741
 configurationVariables:
   jdbc.jdbcTestPool.waitingThread: "0"
   jdbc.jdbcTestPool.minConns: "0"
