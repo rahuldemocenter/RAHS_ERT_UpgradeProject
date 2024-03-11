@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<driverDetails>
+    <database>
+        <name>MySQL</name>
+        <driver inUse="false" exists="true">
+            <name>RAHS_11thMarchDriverG</name>
+            <path>drivers/MySQL/RAHS_11thMarchDriverG</path>
+        </driver>
+    </database>
+</driverDetails>
