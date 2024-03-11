@@ -46,6 +46,18 @@ services:
     version: "1.0"
   - name: TestWIE1344
     version: "1.0"
+- serviceName: project.rahs_ert_upgrade.integrations:EFS_DB_MySQL
+  packages:
+  - name: RAHS_ERT_UpgradeProject
+    version: "1.0"
+  - name: TestWIE1344
+    version: "1.0"
+- serviceName: project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:GET
+  packages:
+  - name: RAHS_ERT_UpgradeProject
+    version: "1.0"
+  - name: TestWIE1344
+    version: "1.0"
 configurationVariables:
   ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.heartBeatInterval
   : "0"
