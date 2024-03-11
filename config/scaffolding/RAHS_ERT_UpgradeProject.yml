@@ -12,6 +12,9 @@ packages:
   gitUrl: https://github.com/rahuldemocenter
   gitUsername: rahuldemocenter
   gitBranch: main
+- name: WmJDBCAdapter
+  wpmServer: https://packages.softwareag.com
+  wpmRegistry: softwareag
 services:
 - serviceName: project.rahs_ert_upgrade.integrations:EFS_Debug
   packages:
@@ -37,18 +40,70 @@ services:
   packages:
   - name: WmPublic
     version: 11.0.0.0.741
+- serviceName: project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:RAHS_11thMarch
+  packages:
+  - name: RAHS_ERT_UpgradeProject
+    version: "1.0"
+  - name: TestWIE1344
+    version: "1.0"
 configurationVariables:
-  jdbc.jdbcTestPool.waitingThread: "0"
-  jdbc.jdbcTestPool.minConns: "0"
-  jdbc.jdbcTestPool.expireTime: "60000"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.heartBeatInterval
+  : "0"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.poolable
+  : "false"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.otherProperties
+  : loginTimeout=60;
   jdbc.jdbcTestPool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/jdbcTestPool.log;ddtdbg.ProtocolTraceShowTime=true
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.transactionType
+  : NO_TRANSACTION
   jdbc.jdbcTestPool.maxConns: "10"
   jdbc.jdbcTestPool.userid: root
-  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionEnabled
+  : "false"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.startupBackoffSecs
+  : "10"
   jdbc.jdbcTestPool.spyenabled: "false"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.driverType
+  : RAHS_11thMarchDriverG
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.blockingTimeout
+  : "1000"
   jdbc.jdbcTestPool.snoopenabled: "false"
-  jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
   jdbc.jdbcTestPool.spyparms: SpyAttributes=(log=(file)logs/spy/jdbcTestPool.log;logTName=yes;timestamp=yes)
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.datasourceClass
+  : com.mysql.cj.jdbc.MysqlDataSource
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.poolIncrementSize
+  : "1"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.networkProtocol
+  : tcp
+  jdbc.jdbcTestPool.waitingThread: "0"
+  jdbc.jdbcTestPool.minConns: "0"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.keyStore
+  : ""
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.minimumPoolSize
+  : "0"
+  jdbc.jdbcTestPool.expireTime: "60000"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.serverName
+  : 10.121.49.158
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.dbType
+  : MySQL
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.startupRetryCount
+  : "0"
+  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.databaseName
+  : OriginDemoDb
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.password
+  : "{AES}tZdSC6Ots/5i2vsfeio6UA=="
+  jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.trustStore
+  : ""
   jdbc.jdbcTestPool.dbURL: jdbc:mysql://mysql.test.local:3306/webm
   jdbc.jdbcTestPool.poolThreshold: "0"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.user
+  : rahul
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionManagerSettings.expireTimeout
+  : "1000"
   jdbc.jdbcTestPool.useSSL: "false"
+  ? artConnection.RAHS_ERT_UpgradeProject.project.rahs_ert_upgrade.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.RAHS_11thMarch.connectionSettings.portNumber
+  : "3306"
